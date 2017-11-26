@@ -7,6 +7,8 @@ import (
 	"text/template"
 	"path/filepath"
 	"flag"
+	"github.com/m-sugawara/go-tracer"
+	"os"
 )
 
 type templateHandler struct {
@@ -27,6 +29,7 @@ func main() {
 	flag.Parse()
 
 	r := newRoom()
+	r.tracer = trace.New(os.Stdout)
 	http.Handle("/", &templateHandler{filename: "chat.html"})
 	http.Handle("/room", r)
 	// Start chat room
