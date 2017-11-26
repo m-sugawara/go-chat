@@ -7,8 +7,8 @@ import (
 	"text/template"
 	"path/filepath"
 	"flag"
-	"github.com/m-sugawara/go-tracer"
 	"os"
+	"github.com/m-sugawara/go-tracer"
 )
 
 type templateHandler struct {
